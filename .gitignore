@@ -1,0 +1,20 @@
+# Operating system and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*~
+# Word lockfiles and temporary outputs
+~$*.docx
+*.tmp
+*.bak
+# Python and build caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.env
+.env.*
+# Never commit secrets or local credentials
+*.pem
+*.key
