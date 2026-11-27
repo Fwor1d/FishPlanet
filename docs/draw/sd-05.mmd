@@ -1,0 +1,18 @@
+sequenceDiagram
+    autonumber
+    actor Analyst as Финансовый аналитик
+    participant System as Калькулятор бюджета FishPlanet
+    Analyst->>System: Передать бюджет и статьи сметы
+    System->>System: Проверить бюджет, количество и цену
+    alt Некорректные данные (А1)
+        System-->>Analyst: Показать поле с ошибкой
+    else Данные корректны
+        System->>System: Рассчитать суммы по статьям и итог
+        alt Итог выше бюджета (А2)
+            System-->>Analyst: Показать итог и сумму перерасхода
+        else Итог равен бюджету (А3)
+            System-->>Analyst: Показать итог и нулевой остаток
+        else Итог ниже бюджета
+            System-->>Analyst: Показать итог и остаток бюджета
+        end
+    end
